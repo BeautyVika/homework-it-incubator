@@ -57,16 +57,28 @@ const MessageSender = (props: any) => {
                     onChange={onChange}
                     onKeyDown={onKeyDown}
                 />
-                <button
-                    id={'hw1-button'}
-                    className={s.button}
+                <div className={s.boxBtn}>
+                    <button
+                        id={'hw1-button'}
+                        className={s.button}
 
-                    onClick={addMessage}
-                >
-                    {/*текст кнопки могут изменить студенты*/}
-                    Send
-                    {/**/}
-                </button>
+                        onClick={addMessage}
+                    >
+                        {/*текст кнопки могут изменить студенты*/}
+                        Send
+                        {/**/}
+                    </button>
+                </div>
+                {/*<button*/}
+                {/*    id={'hw1-button'}*/}
+                {/*    className={s.button}*/}
+
+                {/*    onClick={addMessage}*/}
+                {/*>*/}
+                {/*    /!*текст кнопки могут изменить студенты*!/*/}
+                {/*    Send*/}
+                {/*    /!**!/*/}
+                {/*</button>*/}
             </div>
         </>
     )
