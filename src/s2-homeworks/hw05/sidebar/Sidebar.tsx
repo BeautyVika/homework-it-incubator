@@ -1,4 +1,4 @@
-import React, {FC, useState} from 'react'
+import React, {FC} from 'react'
 import {NavLink} from 'react-router-dom'
 import s from './Sidebar.module.css'
 import {PATH} from '../Pages'
@@ -10,11 +10,6 @@ type PropsType = {
 }
 
 export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
-    const [name, setName] =useState<string>('Pre-junior')
-    const changeActive = (str: string) => {
-        handleClose()
-        setName(str)
-    }
 
     const sidebarClass = s.sidebar
         + (open ? ' ' + s.open : '')
@@ -37,24 +32,21 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                     <NavLink
                         id={'hw5-pre-junior-link'}
                         to={PATH.PRE_JUNIOR}
-                        onClick={()=>changeActive('Pre-junior')}
-                        className={name === 'Pre-junior' ? s.active : ' '}
+                        className={({isActive}) => isActive ? s.active : ''}
                     >
                         Pre-junior
                     </NavLink>
                     <NavLink
                         id={'hw5-junior-link'}
                         to={PATH.JUNIOR}
-                        onClick={()=>changeActive('Junior')}
-                        className={name === 'Junior' ? s.active : ' '}
+                        className={({isActive}) => isActive ? s.active : ''}
                     >
                         Junior
                     </NavLink>
                     <NavLink
                         id={'hw5-junior-plus-link'}
                         to={PATH.JUNIOR_PLUS}
-                        onClick={()=>changeActive('Junior Plus')}
-                        className={name === 'Junior Plus' ? s.active : ' '}
+                        className={({isActive}) => isActive ? s.active : ''}
                     >
                         Junior Plus
                     </NavLink>
