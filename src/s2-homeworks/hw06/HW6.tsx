@@ -18,13 +18,14 @@ const HW6 = () => {
         saveState<string>('hw6-editable-span-value', value)
     }
     const restore = () => {
+        // делают студенты
         let valueLocalStorage = restoreState<string>('hw6-editable-span-value', '')
         setValue(valueLocalStorage)
     }
 
     return (
         <div id={'hw6'}>
-            <div className={s2.hwTitle}>Homework №6</div>
+            <div className={s2.hwTitle}>Homework #6</div>
 
             {/*демонстрация возможностей компоненты:*/}
             <div className={s2.hw}>
