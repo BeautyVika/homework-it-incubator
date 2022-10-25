@@ -13,3 +13,6 @@
 
 .options {
 }
+.span {
+    display: inline-block;
+}
