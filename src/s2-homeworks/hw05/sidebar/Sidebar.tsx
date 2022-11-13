@@ -1,5 +1,5 @@
 import React, {FC} from 'react'
-import {NavLink} from 'react-router-dom'
+import {NavLink, useLocation} from 'react-router-dom'
 import s from './Sidebar.module.css'
 import {PATH} from '../Pages'
 import closeIcon from './closeOutline.svg'
@@ -10,6 +10,9 @@ type PropsType = {
 }
 
 export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
+
+    const location = useLocation()
+    const currentPath = location.pathname
 
     const sidebarClass = s.sidebar
         + (open ? ' ' + s.open : '')
@@ -32,7 +35,7 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                     <NavLink
                         id={'hw5-pre-junior-link'}
                         to={PATH.PRE_JUNIOR}
-                        className={({isActive}) => isActive ? s.active : ''}
+                        className={ currentPath === PATH.PRE_JUNIOR ? s.active : ''}
                         onClick={handleClose}
                     >
                         Pre-junior
@@ -40,7 +43,7 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                     <NavLink
                         id={'hw5-junior-link'}
                         to={PATH.JUNIOR}
-                        className={({isActive}) => isActive ? s.active : ''}
+                        className={currentPath === PATH.JUNIOR ? s.active : ''}
                         onClick={handleClose}
                     >
                         Junior
@@ -48,7 +51,7 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                     <NavLink
                         id={'hw5-junior-plus-link'}
                         to={PATH.JUNIOR_PLUS}
-                        className={({isActive}) => isActive ? s.active : ''}
+                        className={currentPath === PATH.JUNIOR_PLUS ? s.active : ''}
                         onClick={handleClose}
                     >
                         Junior Plus
