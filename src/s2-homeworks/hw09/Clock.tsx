@@ -35,9 +35,9 @@ function Clock() {
 
     // день недели на английском, месяц на английском (https://learn.javascript.ru/intl#intl-datetimeformat)
     const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
-    const stringDay = weekday[date.getDay()] || <br/> // пишут студенты
+    const stringDay = weekday[date.getDay()] || <br/>
     const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-    const stringMonth = month[date.getMonth()] || <br/> // пишут студенты
+    const stringMonth = month[date.getMonth()] || <br/>
 
     return (
         <div className={s.clock}>
