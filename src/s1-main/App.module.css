@@ -8,9 +8,13 @@
 }
 
 .hwTitle {
-    margin-top: 70px;
+    margin-top: 80px;
     font-size: 20px;
     font-weight: 600;
     line-height: 22px;
+    border-bottom: 1px solid #D9D9D9 ;
 
+}
+.line {
+   border-bottom: 1px solid #D9D9D9 ;
 }
