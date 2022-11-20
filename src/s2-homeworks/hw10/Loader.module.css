@@ -1,3 +1,6 @@
 .loader {
+    height: 200px;
+    background-image: url('img/Spinner-1.8s-200px.svg');
+    background-repeat: no-repeat;
     /*свг и/или анимация*/
 }

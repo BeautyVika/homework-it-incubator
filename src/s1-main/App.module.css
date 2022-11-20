@@ -9,8 +9,10 @@
 
 .hwTitle {
     margin-top: 80px;
+    padding: 15px;
     font-size: 20px;
     font-weight: 600;
     line-height: 22px;
     border-bottom: 1px solid #D9D9D9 ;
+    border-top: 1px solid #D9D9D9 ;
 }
