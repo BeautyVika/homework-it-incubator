@@ -48,7 +48,7 @@ const HW13 = () => {
                    setText(e.response.data.errorText)
                    setInfo(e.response.data.info)
                }
-               if(e.response.status === 400){
+               else if(e.response.status === 400){
                    setCode(e.message)
                    setImage(error400)
                    setText(e.response.data.errorText)
@@ -75,8 +75,6 @@ const HW13 = () => {
                         xType={'secondary'}
                         style={{marginRight: '8px'}}
                         disabled={isLoading}
-                        // дописать
-
                     >
                         Send true
                     </SuperButton>
@@ -86,8 +84,6 @@ const HW13 = () => {
                         xType={'secondary'}
                         style={{marginRight: '8px'}}
                         disabled={isLoading}
-                        // дописать
-
                     >
                         Send false
                     </SuperButton>
@@ -97,8 +93,6 @@ const HW13 = () => {
                         xType={'secondary'}
                         style={{marginRight: '8px'}}
                         disabled={isLoading}
-                        // дописать
-
                     >
                         Send undefined
                     </SuperButton>
@@ -107,7 +101,6 @@ const HW13 = () => {
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
                         disabled={isLoading}
-                        // дописать
                     >
                         Send null
                     </SuperButton>
