@@ -1,5 +1,5 @@
 .button {
-    width: 149px;
+    min-width: 149px;
     height: 30px;
     padding: 5px 24px;
     font-family: 'Montserrat', sans-serif;
@@ -10,7 +10,7 @@
 }
 
 .disabled {
-    width: 133px;
+    min-width: 149px;
     height: 30px;
     background: #004D99;
     opacity: 0.5;
