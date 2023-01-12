@@ -34,24 +34,17 @@ const HW14 = () => {
         setLoading(true)
         getTechs(value)
             .then((res) => {
-                // делает студент
-                if(res && res.data.techs.length > 0) {
+                if (res && res.data.techs.length > 0) {
                     setLoading(false)
                     setTechs(res.data.techs)
                 }
-                // сохранить пришедшие данные
-
             })
     }
 
     const onChangeText = (value: string) => {
         setFind(value)
-        // делает студент
-
         // добавить/заменить значение в квери урла
         setSearchParams(value)
-
-        //
     }
 
     useEffect(() => {
@@ -82,7 +75,10 @@ const HW14 = () => {
                     {isLoading ? '...ищем' : <br/>}
                 </div>
 
-                {mappedTechs}
+                <div className={s.tech}>
+                    {mappedTechs}
+                </div>
+
             </div>
         </div>
     )
