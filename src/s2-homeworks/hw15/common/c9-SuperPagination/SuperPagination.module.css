@@ -3,9 +3,11 @@
 }
 
 .text1 {
-
+    padding: 3px;
+    margin-right: 5px;
 }
 
 .text2 {
-
+    margin-left: 5px;
+    padding: 3px;
 }
