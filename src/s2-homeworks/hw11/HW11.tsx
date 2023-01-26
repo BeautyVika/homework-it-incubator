@@ -28,7 +28,7 @@ function HW11() {
 
     return (
         <div id={'hw11'}>
-            <div className={s2.hwTitle}>Homework #11</div>
+            <div className={s2.hwTitle}>Homework №11</div>
 
             <div className={s2.hw}>
                 <div className={s.container}>

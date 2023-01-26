@@ -61,7 +61,7 @@ const HW14 = () => {
 
     return (
         <div id={'hw14'}>
-            <div className={s2.hwTitle}>Homework #14</div>
+            <div className={s2.hwTitle}>Homework №14</div>
 
             <div className={s2.hw}>
                 <SuperDebouncedInput

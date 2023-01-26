@@ -38,7 +38,7 @@ const HW12 = () => {
     return (
         <div id={'hw12'}>
             <div id={'hw12-text'} className={s2.hwTitle}>
-                Homework #12
+                Homework №12
             </div>
 
             <div className={s2.hw}>

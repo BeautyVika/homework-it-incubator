@@ -38,6 +38,7 @@ const getTechs = (params: ParamsType) => {
         })
 }
 
+
 const HW15 = () => {
     const [sort, setSort] = useState('')
     const [page, setPage] = useState(1)
@@ -51,40 +52,39 @@ const HW15 = () => {
         setLoading(true)
         getTechs(params)
             .then((res) => {
-                // делает студент
-
-                // сохранить пришедшие данные
-
-                //
+                if (res) {
+                    setTotalCount(res.data.totalCount)
+                    setTechs(res.data.techs)
+                }
+                setLoading(false)
             })
     }
 
     const onChangePagination = (newPage: number, newCount: number) => {
-        // делает студент
-
-        // setPage(
-        // setCount(
-
-        // sendQuery(
-        // setSearchParams(
-
-        //
+        setPage(newPage)
+        setCount(newCount)
+         const pageQuery :{page:string} ={page:newPage+''}
+         const countQuery :{count:string} ={count:newCount+''}
+         const {count, page, ...lastQueries}=Object.fromEntries(searchParams)
+         const allQuery = {...lastQueries,...pageQuery, ...countQuery}
+        sendQuery(allQuery)
+        setSearchParams(allQuery)
     }
 
     const onChangeSort = (newSort: string) => {
-        // делает студент
+        setSort(newSort)
+        setPage(1)
+        const sortQuery :{sort:string} ={sort:newSort}
+        const {sort, page, ...lastQueries}=Object.fromEntries(searchParams)
+        const allQuery = {...lastQueries,...sortQuery}
+        sendQuery(allQuery)
+        setSearchParams(allQuery)
 
-        // setSort(
-        // setPage(1) // при сортировке сбрасывать на 1 страницу
-
-        // sendQuery(
-        // setSearchParams(
-
-        //
     }
 
     useEffect(() => {
         const params = Object.fromEntries(searchParams)
+        console.log(params)
         sendQuery({page: params.page, count: params.count})
         setPage(+params.page || 1)
         setCount(+params.count || 4)
@@ -104,7 +104,7 @@ const HW15 = () => {
 
     return (
         <div id={'hw15'}>
-            <div className={s2.hwTitle}>Homework #15</div>
+            <div className={s2.hwTitle}>Homework №15</div>
 
             <div className={s2.hw}>
                 {idLoading && <div id={'hw15-loading'} className={s.loading}>Loading...</div>}
