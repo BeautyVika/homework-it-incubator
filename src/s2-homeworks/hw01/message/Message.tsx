@@ -2,12 +2,10 @@ import React from 'react'
 import s from './Message.module.css'
 import {MessageType} from "../HW1";
 
-// создать правильный тип
 export type MessagePropsType = {
     message: MessageType
 }
 
-// нужно отобразить приходящие данные
 const Message = (props: MessagePropsType) => {
     return (
         <div id={'hw1-message-' + props.message.id} className={s.message}>
