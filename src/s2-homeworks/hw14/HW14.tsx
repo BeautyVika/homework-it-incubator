@@ -34,15 +34,11 @@ const HW14 = () => {
         setLoading(true)
         getTechs(value)
             .then((res) => {
-                res && setTechs(res.data.techs)
-                setLoading(false)
+                if (res && res.data.techs.length > 0) {
+                    setLoading(false)
+                    setTechs(res.data.techs)
+                }
             })
-            // .then((res) => {
-            //     if (res && res.data.techs.length > 0) {
-            //         setLoading(false)
-            //         setTechs(res.data.techs)
-            //     }
-            // })
     }
 
     const onChangeText = (value: string) => {
